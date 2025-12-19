@@ -333,7 +333,7 @@ Recent Projects:
 ➤ Technologies: Python, CLI, Automation, Terminal Tool
 ➤ GitHub Link: https://github.com/sh1vam-03/WhatsApp-Spammer
 
-3. Tabsye — QR-Based Ordering System
+3. Tabsye — Coming Soon
 - Modern restaurant ordering platform using QR codes
 - Live menu updates, order tracking, and inventory management
 - Seamless table orders and optimized restaurant service
