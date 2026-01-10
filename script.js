@@ -1,4 +1,3 @@
-// Matrix background effect
 function initMatrix() {
   const canvas = document.getElementById("matrixCanvas");
   if (!canvas) return;
@@ -44,17 +43,14 @@ function initMatrix() {
   window.addEventListener("resize", resizeCanvas);
 }
 
-// Common Loader function
 function showCommonLoader() {
   return new Promise((resolve) => {
     const loader = document.getElementById("commonLoader");
     const progress = document.getElementById("commonLoaderProgress");
 
-    // Show loader
     loader.classList.add("active");
     progress.style.width = "0%";
 
-    // Simulate loading progress - shorter duration
     const progressSteps = [
       { width: "30%", delay: 200 },
       { width: "60%", delay: 300 },
@@ -70,15 +66,13 @@ function showCommonLoader() {
       }, totalDelay);
     });
 
-    // Hide loader after completion
     setTimeout(() => {
       loader.classList.remove("active");
-      setTimeout(resolve, 0); // Shorter fade out
+      setTimeout(resolve, 0);
     }, totalDelay + 600);
   });
 }
 
-// Terminal Class
 class TerminalPortfolio {
   constructor() {
     this.commandHistory = [];
@@ -97,6 +91,8 @@ class TerminalPortfolio {
       "portfolio -skills": () => this.showSkills(),
       "pf -projects": () => this.showProjects(),
       "portfolio -projects": () => this.showProjects(),
+      "pf -experience": () => this.showExperience(),
+      "portfolio -experience": () => this.showExperience(),
       "pf -contact": () => this.showContact(),
       "portfolio -contact": () => this.showContact(),
       "pf -gui": () => this.switchToGUI(),
@@ -136,7 +132,6 @@ class TerminalPortfolio {
       });
     }
 
-    // Terminal window controls
     const closeBtn = document.getElementById("closeTerminal");
     const minimizeBtn = document.getElementById("minimizeTerminal");
     const maximizeBtn = document.getElementById("maximizeTerminal");
@@ -171,7 +166,7 @@ class TerminalPortfolio {
     if (command) {
       this.commandHistory.push(command);
       this.historyIndex = this.commandHistory.length;
-      this.addOutput(`sh1vam@portfolio:~$ ${command}`, "command-line");
+      this.addOutput(`akhilvvn@portfolio:~$ ${command}`, "command-line");
 
       if (this.commands[command]) {
         this.commands[command]();
@@ -229,16 +224,17 @@ class TerminalPortfolio {
 You can use pf as a shorthand for the portfolio command
 Examples:
 
-pf -help     - Show this help menu
-pf -about    - Learn about me
-pf -skills   - View my technical skills
-pf -projects - See my projects
-pf -contact  - Get my contact information
-pf -gui      - Switch to GUI mode
-ls           - List directory contents
-cd           - Change directory
-clear        - Clear terminal
-exit         - Return to mode selection`;
+pf -help       - Show this help menu
+pf -about      - Learn about me
+pf -skills     - View my technical skills
+pf -projects   - See my projects
+pf -experience - View my experience & internships
+pf -contact    - Get my contact information
+pf -gui        - Switch to GUI mode
+ls             - List directory contents
+cd             - Change directory
+clear          - Clear terminal
+exit           - Return to mode selection`;
     this.addOutput(helpContent);
   }
 
@@ -253,20 +249,20 @@ exit         - Return to mode selection`;
 
     const aboutContent = `${aboutAscii}
 
-sh1vam - Full-Stack Developer | Web Security & Penetration Tester
+Akhil V Nair - AI/ML Engineer & Cybersecurity Specialist
 
-I'm building secure applications using my full stack development, web security, and penetration testing skills.
+Building intelligent AI solutions for cybersecurity with expertise in threat detection, computer vision, and explainable AI. Creating secure, privacy-focused machine learning systems for real-world security applications.
 
-I am a Full Stack Developer and Ethical Hacker with specialized expertise in Web Security & Penetration Testing. My unique combination of development skills and security knowledge allows me to build robust web applications with security integrated at every layer of the technology stack.
+I am an AI/ML Engineer specializing in Cybersecurity with a unique background in Criminology and Police Administration. This distinctive combination allows me to approach security challenges from both technical and investigative perspectives, building AI-powered solutions that address real-world threats.
 
-With experience in both creating software and ethically breaking it, I implement security best practices during development while proactively identifying vulnerabilities through comprehensive penetration testing. This dual perspective enables me to deliver solutions that are not just functional, but fundamentally secure by design.
+As the HAC'KP 2025 Winner, I built the age estimation module for a dark web takedown platform, enhancing law enforcement capabilities with computer vision models optimized for real-time operational environments. My work focuses on security-focused AI applications including threat detection systems, forensics tools, and privacy-preserving machine learning.
 
-My technical approach combines modern web development frameworks with offensive security methodologies to create applications that withstand real-world threats while maintaining optimal performance and user experience.
+My technical expertise spans explainable AI, generative models, and full-stack development, enabling me to create end-to-end ML pipelines that are not just functional but fundamentally secure by design.
 
 Stats:
-- 03+ Projects Completed
-- 01+ Satisfied Clients
-- 02+ Professional Certifications`;
+- 08+ Projects Completed
+- 05+ Professional Certifications
+- 01 Hackathon Win (HAC'KP 2025)`;
     this.addOutput(aboutContent);
   }
 
@@ -283,23 +279,23 @@ Stats:
 
 Technical Skills:
 
-Security:
-████████████████          63% VAPT
-██████████████            54% Web Security
-█████████                 36% Network Sec
-█                         02% Cryptography
+AI/ML & Deep Learning:
+█████████████████████     85% TensorFlow/PyTorch
+████████████████████      80% Computer Vision
+███████████████           75% Scikit-learn/XGBoost
+██████████████            70% Model Deployment
 
-Development:
-██████████████████        69% Python
-████████████████          63% JS/Node.js
-███████████████           59% React
-██████████                39% Databases
+Programming & Development:
+██████████████████████    90% Python
+███████████████           75% JavaScript/React
+██████████████            70% FastAPI/Flask
+█████████████             65% SQL/Databases
 
-Tools & Technologies:
-████████████████████████  93% Kali Linux
-██████████████████████    86% Burp Suite
-██████████████            54% Metasploit
-██████████████            53% Wireshark`;
+Tools & Frameworks:
+█████████████████████     85% Linux/Jupyter
+████████████████████      80% Git/Docker
+███████████████           75% Hugging Face/OpenCV
+██████████████            70% Google Cloud Platform`;
     this.addOutput(skillsContent);
   }
 
@@ -314,34 +310,80 @@ Tools & Technologies:
 
     const projectsContent = `${projectsAscii}
 
-Recent Projects:
+Featured Projects:
 
-1. Employee Management System (EMS)
-- Employee Management System is a web application that allows you to manage your employees and their tasks efficiently.
-- Role-based access (Admin / HR / Employee).
-- Attendance-based payroll logic.
-- Modular and readable frontend structure
-➤ Technologies: JavaScript, React, Next.js, Tailwind CSS
-➤ GitHub Link: https://github.com/sh1vam-03/employee-management-system
-➤ Live demo: https://employee-management-system-nine-navy.vercel.app
+1. CyPrompt - AI-Driven Security Platform
+- Built hybrid ML system with XGBoost and Autoencoders
+- Implemented 5-stage Google Gemini pipeline with SHAP explainability
+- Real-time threat detection with sub-3s WebSocket latency
+- Interactive visualizations for security analysis
+➤ Technologies: Python, XGBoost, TensorFlow, Google Gemini, FastAPI, WebSocket, SHAP
+➤ GitHub: https://github.com/akhilvvn
 
-2. WA-Spam — WhatsApp, Snapchat, etc Spammer  
-- Send user-typed or auto-generated messages on WhatsApp, Snapchat, and more
-- Random message generation and counting features
-- Flexible spamming options for educational purposes
-- Terminal-based Python tool for automation
-➤ Technologies: Python, CLI, Automation, Terminal Tool
-➤ GitHub Link: https://github.com/sh1vam-03/WhatsApp-Spammer
+2. AI Image Forensics & Investigative Tool Suite
+- Developed 8-tool AI/ML suite for comprehensive image analysis
+- Perceptual hashing, ResNet scene classification, CLIP multimodal retrieval
+- YOLOv8 object detection with FastAPI + React investigator tool
+- Built for forensic investigations and security applications
+➤ Technologies: Python, ResNet, CLIP, YOLOv8, FastAPI, React, Computer Vision
+➤ GitHub: https://github.com/akhilvvn
 
-3. Tabsye — Coming Soon
-- Modern restaurant ordering platform using QR codes
-- Live menu updates, order tracking, and inventory management
-- Seamless table orders and optimized restaurant service
-- Web-based interface with Next.js and Tailwind CSS
-➤ Technologies: Next.js, Tailwind CSS, PostgreSQL, Web Security
-➤ GitHub Link: https://github.com/sh1vam-03/tabsye-coming-soon-frontend
-➤ Live Demo: https://tabsye.com`;
+3. Employee Salary Prediction with Explainable AI
+- Random Forest model with SHAP explainability
+- Gender fairness analysis and bias detection
+- Interactive Streamlit deployment with live predictions
+- Feature impact analysis for transparent decision-making
+➤ Technologies: Python, Random Forest, SHAP, Streamlit, Scikit-learn, Pandas
+➤ GitHub: https://github.com/akhilvvn
+
+4. Privacy-Focused Real-Time Age Estimation
+- Client-side age estimation using faceapi.js and TensorFlow.js
+- On-device inference for maximum privacy protection
+- Optimized lightweight models for low-latency predictions
+- Production-ready browser-based inference
+➤ Technologies: TensorFlow.js, faceapi.js, JavaScript, Computer Vision
+➤ GitHub: https://github.com/akhilvvn`;
     this.addOutput(projectsContent);
+  }
+
+  showExperience() {
+    const experienceAscii = `
+███████╗██╗  ██╗██████╗ ███████╗██████╗ ██╗███████╗███╗   ██╗ ██████╗███████╗
+██╔════╝╚██╗██╔╝██╔══██╗██╔════╝██╔══██╗██║██╔════╝████╗  ██║██╔════╝██╔════╝
+█████╗   ╚███╔╝ ██████╔╝█████╗  ██████╔╝██║█████╗  ██╔██╗ ██║██║     █████╗  
+██╔══╝   ██╔██╗ ██╔═══╝ ██╔══╝  ██╔══██╗██║██╔══╝  ██║╚██╗██║██║     ██╔══╝  
+███████╗██╔╝ ██╗██║     ███████╗██║  ██║██║███████╗██║ ╚████║╚██████╗███████╗
+╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝`;
+
+    const experienceContent = `${experienceAscii}
+
+Professional Experience:
+
+1. HAC'KP 2025 Winner - AI Team Member
+   Kerala Police Cyberdome
+   
+   • Built age estimation module for the take it down platform
+   • Enhanced Grapnel dark web crawler into real-time solution
+   • Deployed CV models: NSFW classification, caption generation, pose estimation
+   • Optimized models for real-time performance in operational environments
+   ➤ Tech: Python, TensorFlow, Computer Vision, Deep Learning, Real-time Systems
+
+2. Artificial Intelligence & Machine Learning Intern
+   Edunet Foundation (AICTE & IBM SkillsBuild) • June 2025 – July 2025
+   
+   • Hands-on experience in supervised/unsupervised learning
+   • Built Employee Salary Prediction model with complete ML pipeline
+   • Achieved strong performance metrics through hyperparameter tuning
+   • Data preprocessing to deployment workflow
+   ➤ Tech: Python, Scikit-learn, TensorFlow, Feature Engineering
+
+Certifications:
+✓ Artificial Intelligence - IBM SkillsBuild, 2025
+✓ Cybersecurity Fundamentals - IBM SkillsBuild, 2025
+✓ Introduction to Cybersecurity - CISCO, 2025
+✓ Cloud Computing - NPTEL - IIT Kharagpur, 2025
+✓ Programming in C++ - C-DIT - Genisys Academy, 2016`;
+    this.addOutput(experienceContent);
   }
 
   showContact() {
@@ -357,19 +399,18 @@ Recent Projects:
 
 Contact Information:
 
-Email:        l1acker03@gmail.com
-Phone:        +91 75177514XX
-Address:      192.168.119.12
-Availability: Currently available for freelance projects
+Email:        akhilvvnair@gmail.com
+Phone:        +91 9526532426
+Location:     Thiruvananthapuram, Kerala, India
+Availability: Currently available for AI/ML and cybersecurity internships,
+              full-time roles, research collaborations, and freelance projects
 
 Social:
-- GitHub:     github.com/sh1vam-03
-- LinkedIn:   linkedin.com/in/sh1vam~03
-- Twitter:    x.com/sh1vam_03
-- Instagram:  instagram.com/sh1vam_03
+- GitHub:     github.com/akhilvvn
+- LinkedIn:   linkedin.com/in/akhilvvn
 
-Let's work together to secure your digital assets and 
-build innovative technology solutions.`;
+Let's collaborate on building intelligent, secure AI solutions 
+for real-world cybersecurity challenges.`;
     this.addOutput(contactContent);
   }
 
@@ -389,7 +430,6 @@ build innovative technology solutions.`;
     this.isLoading = true;
     this.addOutput("[INFO] Switching to GUI mode...");
 
-    // Remove setTimeout and directly switch after loader
     await showCommonLoader();
     document.getElementById("terminalInterface").style.display = "none";
     document.getElementById("guiInterface").style.display = "block";
@@ -401,7 +441,6 @@ build innovative technology solutions.`;
     this.isLoading = true;
     this.addOutput("[INFO] Returning to mode selection...");
 
-    // Remove setTimeout and directly switch after loader
     await showCommonLoader();
     document.getElementById("terminalInterface").style.display = "none";
     document.getElementById("viewSelector").style.display = "flex";
@@ -445,7 +484,7 @@ build innovative technology solutions.`;
     newInputContainer.className = "terminal-input-container";
     newInputContainer.id = "currentInput";
     newInputContainer.innerHTML = `
-              <span class="terminal-prompt">sh1vam@portfolio:~$</span>
+              <span class="terminal-prompt">akhilvvn@portfolio:~$</span>
               <input type="text" class="terminal-input" autocomplete="off" spellcheck="false">
               <span class="terminal-cursor"></span>
             `;
@@ -457,7 +496,6 @@ build innovative technology solutions.`;
     this.currentInputContainer = newInputContainer;
     this.currentInput = newInputContainer.querySelector(".terminal-input");
 
-    // Reattach event listeners
     if (this.currentInput) {
       this.currentInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
@@ -491,9 +529,7 @@ build innovative technology solutions.`;
   }
 }
 
-// GUI initialization
 function initGUI() {
-  // Mobile menu toggle
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
@@ -506,7 +542,6 @@ function initGUI() {
     });
   }
 
-  // Close mobile menu when clicking on a link
   document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
       if (navLinks) {
@@ -518,7 +553,6 @@ function initGUI() {
     });
   });
 
-  // Switch to terminal from GUI
   const switchToTerminalBtn = document.getElementById("switchToTerminal");
   if (switchToTerminalBtn) {
     switchToTerminalBtn.addEventListener("click", async (e) => {
@@ -536,7 +570,6 @@ function initGUI() {
     });
   }
 
-  // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -560,7 +593,6 @@ function initGUI() {
     });
   });
 
-  // Animate skill bars
   function animateSkillBars() {
     const skillLevels = document.querySelectorAll(".skill-level");
     skillLevels.forEach((skill) => {
@@ -569,14 +601,15 @@ function initGUI() {
     });
   }
 
-  // Typing animation
   function initTypingAnimation() {
     const textElement = document.getElementById("typed-text");
     if (!textElement) return;
 
     const texts = [
+      "AI/ML Engineer",
+      "Cybersecurity Researcher",
       "Full-Stack Developer",
-      "Web Security & Penetration Tester",
+      "Computer Vision Specialist"
     ];
     let textIndex = 0;
     let charIndex = 0;
@@ -611,7 +644,6 @@ function initGUI() {
     setTimeout(type, 1000);
   }
 
-  // Initialize animations
   function initAnimations() {
     if (typeof AOS !== "undefined") {
       AOS.init({
@@ -627,7 +659,6 @@ function initGUI() {
     highlightNavSection();
   }
 
-  // Highlight current section in navigation
   function highlightNavSection() {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
@@ -655,9 +686,8 @@ function initGUI() {
     });
   }
 
-  // Initialize EmailJS
   (function () {
-    emailjs.init("vKxbPXfw618L4ocmy"); // ✅ Replace with your EmailJS public key
+    emailjs.init("cqGh21Qh0qZrl7DbL");
   })();
 
   const contactForm = document.getElementById("contactForm");
@@ -669,14 +699,11 @@ function initGUI() {
       const submitBtn = this.querySelector(".submit-btn");
       const originalText = submitBtn.innerHTML;
 
-      // Show loading state
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
 
-      // 1️⃣ Send notification email (to you)
-      emailjs.sendForm("service_va4luii", "template_6c967hv", this)
+      emailjs.sendForm("service_e8y7504", "template_6c967hv", this)
         .then(() => {
-          // 2️⃣ Send auto-reply email (to user)
           return emailjs.sendForm("service_va4luii", "template_08nbffa", this);
         })
         .then(() => {
@@ -696,11 +723,9 @@ function initGUI() {
   initAnimations();
 }
 
-// Initialize application
 document.addEventListener("DOMContentLoaded", () => {
   initMatrix();
 
-  // View selection event listeners
   const terminalOption = document.getElementById("terminalOption");
   const guiOption = document.getElementById("guiOption");
 
