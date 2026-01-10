@@ -203,20 +203,13 @@ This project is open source and available under the MIT License.
 
 ## Contact
 
-- Email: l1acker03@gmail.com
-- GitHub: [sh1vam-03](https://github.com/sh1vam-03)
-- LinkedIn: [sh1vam~03](https://www.linkedin.com/in/sh1vam~03)
-- Twitter: [sh1vam_03](https://x.com/sh1vam_03)
+- Email: akhilvvnair@gmail.com
+- GitHub: [akhilvvn](https://github.com/akhilvvn)
+- LinkedIn: [akhilvvn](https://www.linkedin.com/in/akhilvvn)
 
-## Future Enhancements
+## Credits
 
-Potential improvements for the portfolio:
-- Add dark/light mode toggle
-- Implement PWA features for offline access
-- Add more interactive terminal commands
-- Include a blog section
-- Add project filtering by technology
-- Implement internationalization (i18n)
+GitHub: [sh1vam-03](https://github.com/sh1vam-03)
 
 ---
 
