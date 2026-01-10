@@ -702,10 +702,7 @@ function initGUI() {
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitBtn.disabled = true;
 
-      emailjs.sendForm("service_e8y7504", "template_6c967hv", this)
-        .then(() => {
-          return emailjs.sendForm("service_va4luii", "template_08nbffa", this);
-        })
+      emailjs.sendForm("service_e8y7504", "template_g5pmoju", this)
         .then(() => {
           alert("✅ Message sent successfully! An auto-reply has been sent to your inbox.");
           contactForm.reset();
