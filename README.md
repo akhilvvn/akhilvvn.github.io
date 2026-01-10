@@ -6,8 +6,6 @@ This is a dual-mode portfolio website for a security specialist and developer, f
 
 ## [Portfolio Link](https://akhilvnair.me)
 
-![Portfolio Preview](https://github.com/user-attachments/assets/bc3cf9af-ad02-4c73-a9cc-88624c937474)
-
 ## Features
 
 ### Dual Interface Experience
