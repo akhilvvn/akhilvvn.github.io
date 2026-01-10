@@ -704,7 +704,7 @@ function initGUI() {
 
       emailjs.sendForm("service_e8y7504", "template_g5pmoju", this)
         .then(() => {
-          alert("✅ Message sent successfully! An auto-reply has been sent to your inbox.");
+          alert("✅ Message sent successfully!");
           contactForm.reset();
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
