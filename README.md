@@ -189,9 +189,6 @@ This portfolio supports all modern browsers including:
 
 ## Deployment
 
-The portfolio is deployed on GitHub Pages at:
-https://sh1vam-03.github.io/portfolio/
-
 To deploy your own version:
 1. Fork the repository
 2. Enable GitHub Pages in repository settings
