@@ -1,10 +1,10 @@
-# Portfolio | sh1vam-03
+# Portfolio
 
 ## Overview
 
 This is a dual-mode portfolio website for a security specialist and developer, featuring both a terminal interface and a traditional GUI interface. The portfolio showcases skills, projects, and contact information in an interactive and visually appealing manner.
 
-## [Portfolio Link](https://sh1vam-03.github.io/portfolio)
+## [Portfolio Link](https://akhilvnair.me)
 
 ![Portfolio Preview](https://github.com/user-attachments/assets/bc3cf9af-ad02-4c73-a9cc-88624c937474)
 
